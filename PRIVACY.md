@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 10, 2026
+**Last updated:** May 13, 2026
 
 This privacy policy applies to the **Keychain** mobile application
 ("the app") for Android. The app is offline-first software that runs
@@ -22,6 +22,9 @@ more importantly, what it does **not** do — with your data.
 - **Internet access** is declared as a framework requirement. The only
   external network activity that can occur is an on-demand download of
   Google's barcode-scanning module the first time you use QR scanning.
+- The app offers an **optional tip jar**. Payments are processed by
+  Google Play (Android) or Ko-fi (web). The app never receives your
+  payment details.
 
 ---
 
@@ -113,6 +116,38 @@ The only third-party component the app integrates with on-device is:
 
 The app does not include or integrate with any third-party analytics,
 advertising, crash-reporting, attribution, or tracking service.
+
+---
+
+## Donations and in-app purchases
+
+The app offers an optional tip jar so you can support development.
+We do not process any payment ourselves and we never see your payment
+details.
+
+### On Android (Google Play Billing)
+
+If you choose to tip from inside the app, the purchase is handled by
+Google Play. The app only receives a confirmation that a tier was
+purchased — it never receives your name, card number, billing address,
+or any other payment information. Payments are governed by Google's
+terms and privacy policy at <https://policies.google.com/privacy>.
+
+The app stores two values locally to drive the "Lifetime tips" counter
+shown in the Support panel:
+
+- The number of tips you have given.
+- The timestamp of the most recent tip.
+
+Both are stored only on your device. They are never transmitted.
+
+### On web / desktop (Ko-fi)
+
+On platforms without in-app billing, the Support button opens an
+external link to Ko-fi (<https://ko-fi.com>), which handles donations.
+Once you leave the app, your interaction is governed by Ko-fi's
+privacy policy. The app does not record whether you completed a
+donation.
 
 ---
 
