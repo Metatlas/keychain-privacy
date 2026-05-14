@@ -1,30 +1,39 @@
 # Privacy Policy
 
-**Last updated:** May 13, 2026
+**Last updated:** May 14, 2026
 
-This privacy policy applies to the **Keychain** mobile application
-("the app") for Android. The app is offline-first software that runs
-entirely on your device. This policy explains what the app does — and,
-more importantly, what it does **not** do — with your data.
+This privacy policy applies to **Keychain** ("the app"), available
+as an Android application and as a desktop application for Windows.
+The app is offline-first software that runs entirely on your device.
+This policy explains what the app does — and, more importantly, what
+it does **not** do — with your data. The policy applies equally to
+both the Android and desktop versions; where their behavior differs,
+the relevant section calls it out explicitly.
 
 ---
 
 ## Quick summary
 
-- **All your data stays on your device.** The app has no backend server
-  and no user account.
+- **Your data stays on your device.** The app has no backend server
+  and no user account. The only times data leaves the device are
+  (1) data exports you save or share manually, and (2) optional
+  device-to-device transfers you explicitly initiate over your local
+  network. See *Device-to-device transfer* below.
 - We **do not collect, transmit, share, or sell** any data about you or
   the data you enter into the app.
 - We **do not use** analytics, advertising, crash reporting, telemetry,
   or any tracking SDK.
 - **Camera access** is requested only when you tap "Scan QR" inside the
   Vault tool. Camera images are processed on-device and never transmitted.
-- **Internet access** is declared as a framework requirement. The only
-  external network activity that can occur is an on-demand download of
-  Google's barcode-scanning module the first time you use QR scanning.
+- **Internet access** is required as a framework dependency. The app
+  itself does not call any servers we operate, because no such servers
+  exist. The few situations in which external network traffic can
+  occur — Google Play services, optional LAN transfers between your
+  own devices, and links you choose to open — are listed in the
+  *Permissions → Internet* section below.
 - The app offers an **optional tip jar**. Payments are processed by
-  Google Play (Android) or Ko-fi (web). The app never receives your
-  payment details.
+  Google Play (Android) or by Ko-fi / PayPal (web / desktop). The app
+  never receives your payment details.
 
 ---
 
@@ -32,9 +41,10 @@ more importantly, what it does **not** do — with your data.
 
 We do not collect, store on any server, transmit, or share:
 
-- Your passwords, authenticator (TOTP) secrets, vault entries, bills,
-  checklists, inventory items, hashes, encrypted strings, or any other
-  content you enter into the app.
+- Your passwords, authenticator (TOTP) secrets, recovery / backup
+  codes, vault entries, bills, checklists, inventory items, addresses,
+  the services tied to those addresses, hashes, encrypted strings, or
+  any other content you enter into the app.
 - Your name, email address, phone number, postal address, payment
   information, or any other personally identifiable information.
 - Your device identifier, advertising identifier, IP address, precise or
@@ -53,17 +63,20 @@ server we control because no such server exists.
 The app stores data locally on your device, in storage areas that are
 isolated to the app and not accessible to other apps:
 
-- **Vault entries** (passwords, usernames, optional TOTP authenticator
-  secrets) are encrypted with **AES-256-GCM** using a key derived from
-  your master passphrase via **PBKDF2-SHA-256 with 250,000 iterations**.
+- **Vault entries** (service name, optional username / email, password,
+  optional TOTP authenticator secret, optional recovery / backup codes)
+  are encrypted with **AES-256-GCM** using a key derived from your
+  master passphrase via **PBKDF2-SHA-256 with 250,000 iterations**.
   Your master passphrase is never stored.
 - **Encrypted inventory checklists** are protected with the same
   algorithms, using a separate passphrase you choose.
-- **Bills, regular checklists, saved password-generator settings, theme
-  preference, and other UI state** are stored in the app's local
-  storage. These items are stored without additional encryption beyond
-  the operating system's app sandbox.
-- **Files you export** (vault backup, checklist backup, etc.) are
+- **Bills, income figures, regular checklists, addresses, the services
+  tied to those addresses, saved password-generator settings, custom
+  themes you create, your reminder-time setting, your active theme,
+  and other UI state** are stored in the app's local storage. These
+  items are stored without additional encryption beyond the operating
+  system's app sandbox.
+- **Files you export** (vault, addresses, checklist, etc.) are
   encrypted with a passcode you choose before being written to the
   location you select.
 
@@ -94,25 +107,64 @@ without it.
 ### Internet (`android.permission.INTERNET`)
 
 Declared because it is required by the Capacitor framework that hosts
-the app. The app itself does not contact any servers it controls.
+the app on Android. The app itself does not contact any servers we
+operate, because no such servers exist. External network traffic can
+occur in the following situations, all of them either user-initiated
+or routed entirely through Google Play services:
 
-The only external network traffic that can be initiated as a side effect
-of using the app is a one-time on-demand download of Google's ML Kit
-barcode-scanning model, which happens the first time you use the QR
-scanner. This download is requested by Google Play Services on your
-device, which is responsible for delivering it. Once the model is on
-your device, all QR scanning runs fully offline.
+- **ML Kit barcode-scanning model download** — a one-time, on-demand
+  download requested by Google Play Services the first time you use
+  the QR scanner. Once the model is on your device, scanning runs
+  fully offline.
+- **Google Play Billing** — when you choose to tip from inside the
+  app on Android, the purchase flow is owned end-to-end by the Google
+  Play Billing service. The app receives only a confirmation that a
+  tier was purchased.
+- **Google Play in-app updates** — the app checks the on-device Play
+  Store for app updates and may surface a prompt. This check is
+  brokered by Google Play services on your device; we don't operate
+  a separate update server.
+- **Device-to-device LAN transfer** — when you explicitly start a
+  transfer (see *Device-to-device transfer* below), the two devices
+  exchange data peer-to-peer on your local network. Nothing leaves
+  the LAN.
+- **External links you choose to open** — for example, a bill's
+  billing-portal URL, a tracked-service URL in Addresses, or the
+  Ko-fi / PayPal links in the Support panel. Tapping such a link
+  hands control to your default browser; we don't see or record what
+  you do there.
+
+No other network calls are made. The desktop (Tauri / Windows) build
+behaves the same way: no servers operated by us, the same five
+situations above, with Google Play services replaced by the Microsoft
+Store mechanisms where relevant.
 
 ---
 
 ## Third-party services
 
-The only third-party component the app integrates with on-device is:
+The app integrates with the following third-party components, all of
+them on-device or invoked only at your explicit request:
 
-- **Google ML Kit Barcode Scanning** (provided by Google Play Services).
-  Used exclusively to decode QR codes captured by the camera. Scanning
-  happens on-device. See Google's privacy policy at
+- **Google ML Kit Barcode Scanning** (provided by Google Play Services
+  on Android). Used exclusively to decode QR codes captured by the
+  camera. Scanning happens on-device after the one-time model
+  download. See Google's privacy policy at
   <https://policies.google.com/privacy>.
+- **Google Play Billing** (Android only, invoked only when you choose
+  to tip). Handles the entire purchase flow. The app sees only the
+  product ID and a transaction confirmation; it does not see your
+  payment details. See Google's policy linked above.
+- **Google Play In-App Update API** (Android only). Used to detect
+  whether a newer version of the app is available in the Play Store
+  and to surface the standard update prompt. The check is brokered by
+  the on-device Play Services; we don't run a separate update server.
+- **Ko-fi and PayPal** (web / desktop only, invoked only when you
+  choose to tip). The Support panel opens an external link to these
+  services in your default browser. Once you leave the app, your
+  interaction is governed by their respective privacy policies
+  (<https://ko-fi.com> and <https://www.paypal.com>). The app does
+  not record whether you completed a donation.
 
 The app does not include or integrate with any third-party analytics,
 advertising, crash-reporting, attribution, or tracking service.
@@ -141,30 +193,69 @@ shown in the Support panel:
 
 Both are stored only on your device. They are never transmitted.
 
-### On web / desktop (Ko-fi)
+### On web / desktop (Ko-fi or PayPal)
 
-On platforms without in-app billing, the Support button opens an
-external link to Ko-fi (<https://ko-fi.com>), which handles donations.
-Once you leave the app, your interaction is governed by Ko-fi's
+On platforms without in-app billing, the Support panel offers external
+links to Ko-fi (<https://ko-fi.com>) and PayPal
+(<https://www.paypal.com>) which handle donations directly. Tapping
+either button opens the chosen service in your default browser. Once
+you leave the app, your interaction is governed by that service's
 privacy policy. The app does not record whether you completed a
 donation.
+
+---
+
+## Device-to-device transfer (LAN)
+
+Several tools and a Settings entry offer an optional transfer feature
+that lets you move data between two of your own devices directly over
+your local network — for example, between your phone and your desktop
+computer. Supported sources are the **Vault**, **Bills**,
+**Addresses**, **Checklist**, and **Custom Themes** tools, plus a
+**Settings → Transfer** composer that bundles a selection from any
+combination of those tools into a single transfer. This feature only
+runs when you explicitly start a transfer; it never runs in the
+background.
+
+When you transfer data:
+
+- The two devices exchange data peer-to-peer over Wi-Fi. The data
+  never reaches a server we operate — no Keychain backend exists.
+- The payload is encrypted with **AES-256-GCM** before it leaves the
+  sending device. The encryption key is derived on both ends from a
+  32-byte random value shown only inside the QR code, so a network
+  observer without the QR has nothing usable to read.
+- A 4-digit verification code is shown on both screens. You confirm
+  the two codes match before any data moves — that catches the case
+  where you scanned the wrong QR.
+- The transfer server runs for at most five minutes and only accepts a
+  single successful transfer before shutting itself down. Three failed
+  authentication attempts also shut it down. Nothing about the session
+  is written to disk — the encryption key, token, and port are held
+  in memory only.
+
+If you transfer data to a device you don't own (for example, sending
+an export to a family member), once it lands on the other device it
+is governed by whatever happens on that device. You are responsible
+for choosing who you transfer to.
 
 ---
 
 ## Data exports and external links
 
 If you use the app's export feature to save a backup of your vault,
-checklists, or bills, the resulting file is created on your device at
-the location you choose (typically your Downloads folder or another
-location you select via the system file picker). Once exported, you are
-solely responsible for that file. We strongly recommend you only export
-to locations you control and only share the files with parties you
-trust.
+checklists, bills, or addresses, the resulting file is created on
+your device at the location you choose (typically your Downloads
+folder or another location you select via the system file picker).
+Once exported, you are solely responsible for that file. We strongly
+recommend you only export to locations you control and only share the
+files with parties you trust.
 
-The Bill Manager tool can open external URLs you have entered (for
-example, a billing portal). Tapping such a link launches your default
-browser, which is governed by its own privacy policy. We do not see or
-record which links you open.
+The Bill Manager and Addresses tools can open external URLs you have
+entered (for example, a billing portal, or the page you use to
+update an address with a given service). Tapping such a link launches
+your default browser, which is governed by its own privacy policy. We
+do not see or record which links you open.
 
 ---
 
