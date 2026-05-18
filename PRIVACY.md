@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 14, 2026
+**Last updated:** May 17, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -70,12 +70,13 @@ isolated to the app and not accessible to other apps:
   Your master passphrase is never stored.
 - **Encrypted inventory checklists** are protected with the same
   algorithms, using a separate passphrase you choose.
-- **Bills, income figures, regular checklists, addresses, the services
-  tied to those addresses, saved password-generator settings, custom
-  themes you create, your reminder-time setting, your active theme,
-  and other UI state** are stored in the app's local storage. These
-  items are stored without additional encryption beyond the operating
-  system's app sandbox.
+- **Bills, hypothetical "what-if" bills (planning entries used by the
+  Insights panel), income figures, saved checklists (regular and
+  recurring types), addresses, the services tied to those addresses,
+  saved password-generator settings, custom themes you create, your
+  reminder-time setting, your active theme, and other UI state** are
+  stored in the app's local storage. These items are stored without
+  additional encryption beyond the operating system's app sandbox.
 - **Files you export** (vault, addresses, checklist, etc.) are
   encrypted with a passcode you choose before being written to the
   location you select.
@@ -210,11 +211,11 @@ donation.
 Several tools and a Settings entry offer an optional transfer feature
 that lets you move data between two of your own devices directly over
 your local network — for example, between your phone and your desktop
-computer. Supported sources are the **Vault**, **Bills**,
-**Addresses**, **Checklist**, and **Custom Themes** tools, plus a
-**Settings → Transfer** composer that bundles a selection from any
-combination of those tools into a single transfer. This feature only
-runs when you explicitly start a transfer; it never runs in the
+computer. Supported sources are the **Vault**, **Bills** (including
+**what-if bills**), **Addresses**, **Checklist**, and **Custom Themes**
+tools, plus a **Settings → Transfer** composer that bundles a selection
+from any combination of those tools into a single transfer. This feature
+only runs when you explicitly start a transfer; it never runs in the
 background.
 
 When you transfer data:
