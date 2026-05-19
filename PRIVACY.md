@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 17, 2026
+**Last updated:** May 19, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -71,12 +71,15 @@ isolated to the app and not accessible to other apps:
 - **Encrypted inventory checklists** are protected with the same
   algorithms, using a separate passphrase you choose.
 - **Bills, hypothetical "what-if" bills (planning entries used by the
-  Insights panel), income figures, saved checklists (regular and
-  recurring types), addresses, the services tied to those addresses,
-  saved password-generator settings, custom themes you create, your
-  reminder-time setting, your active theme, and other UI state** are
-  stored in the app's local storage. These items are stored without
-  additional encryption beyond the operating system's app sandbox.
+  Insights panel), income figures (including an optional next-pay-day
+  date you may enter), an optional current account balance you may
+  enter to drive the Insights weekly balance projection, saved
+  checklists (regular and recurring types), addresses, the services
+  tied to those addresses, saved password-generator settings, custom
+  themes you create, your reminder-time setting, your active theme,
+  and other UI state** are stored in the app's local storage. These
+  items are stored without additional encryption beyond the operating
+  system's app sandbox.
 - **Files you export** (vault, addresses, checklist, etc.) are
   encrypted with a passcode you choose before being written to the
   location you select.
