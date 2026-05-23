@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 19, 2026
+**Last updated:** May 23, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -73,7 +73,7 @@ isolated to the app and not accessible to other apps:
 - **Bills, hypothetical "what-if" bills (planning entries used by the
   Insights panel), income figures (including an optional next-pay-day
   date you may enter), an optional current account balance you may
-  enter to drive the Insights weekly balance projection, saved
+  enter to drive the Insights day-by-day balance projection, saved
   checklists (regular and recurring types), addresses, the services
   tied to those addresses, saved password-generator settings, custom
   themes you create, your reminder-time setting, your active theme,
@@ -254,6 +254,18 @@ folder or another location you select via the system file picker).
 Once exported, you are solely responsible for that file. We strongly
 recommend you only export to locations you control and only share the
 files with parties you trust.
+
+The **Local backup** feature (Settings → Transfer) writes a single
+file containing everything on the device — all of the collections
+listed above plus your settings and preferences — to the same
+local folder. Your vault entries and any encrypted inventory
+checklists stay encrypted inside that file; the remaining sections
+(bills, plaintext checklists, addresses, custom themes, preferences)
+are written as-is, without additional encryption. Like any export it
+is created locally, only when you ask for it, and never transmitted
+anywhere — treat the backup file as sensitive and keep it somewhere
+you control. Restoring a backup reads such a file you select and
+merges it into the current device.
 
 The Bill Manager and Addresses tools can open external URLs you have
 entered (for example, a billing portal, or the page you use to
