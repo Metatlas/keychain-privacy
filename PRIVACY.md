@@ -73,7 +73,7 @@ isolated to the app and not accessible to other apps:
 - **Bills, hypothetical "what-if" bills (planning entries used by the
   Insights panel), income figures (including an optional next-pay-day
   date you may enter), an optional current account balance you may
-  enter to drive the Insights day-by-day balance projection, saved
+  enter to drive the Insights balance projection, saved
   checklists (regular and recurring types), addresses, the services
   tied to those addresses, saved password-generator settings, custom
   themes you create, your reminder-time setting, your active theme,
