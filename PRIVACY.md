@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 23, 2026
+**Last updated:** May 24, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -48,7 +48,11 @@ We do not collect, store on any server, transmit, or share:
 - Your name, email address, phone number, postal address, payment
   information, or any other personally identifiable information.
 - Your device identifier, advertising identifier, IP address, precise or
-  approximate location, network information, or browsing activity.
+  approximate location, network information, or browsing activity. (The
+  optional Atlas device-2FA feature reads a stable device identifier
+  **on-device only**, to derive a per-device credential — it is processed
+  locally, never sent to us, and no server we operate exists to receive it;
+  see *Atlas device two-factor authentication* below.)
 - Diagnostic, crash, performance, or usage data.
 - Camera images, video frames, or the contents of QR codes you scan.
 
@@ -83,6 +87,10 @@ isolated to the app and not accessible to other apps:
 - **Files you export** (vault, addresses, checklist, etc.) are
   encrypted with a passcode you choose before being written to the
   location you select.
+- **The Atlas device-2FA Credential ID** (an opaque per-device value
+  derived locally — see *Atlas device two-factor authentication* below)
+  is cached in local storage. The Atlas 2FA secrets you enroll are saved
+  as ordinary vault entries, encrypted like everything else in the vault.
 
 You can remove this data at any time by uninstalling the app or by
 clearing app storage from your device's Settings → Apps screen.
@@ -242,6 +250,41 @@ If you transfer data to a device you don't own (for example, sending
 an export to a family member), once it lands on the other device it
 is governed by whatever happens on that device. You are responsible
 for choosing who you transfer to.
+
+---
+
+## Atlas device two-factor authentication (optional)
+
+Keychain can act as an authenticator for **Atlas**, a separate
+application you may use. This feature is entirely optional and only does
+anything when you choose to enroll a device.
+
+When you enroll, Keychain needs a **Credential ID** that stays the same
+for this device — including across an app reinstall — because Atlas
+identifies your devices by it. To produce one without it changing, the
+app reads a **stable device identifier** and derives the Credential ID
+from it:
+
+- On **Windows desktop**, the operating system's `MachineGuid`.
+- On **Android**, the system `ANDROID_ID`, read through the
+  `@capacitor/device` plugin.
+
+This identifier is **processed entirely on your device**: it is combined
+with a fixed app-specific value and passed through a one-way **SHA-256**
+hash, and only the resulting opaque `KC-…` Credential ID is kept. The raw
+device identifier is never stored and never transmitted, and — as with
+everything else in the app — there is no server we operate for it to be
+sent to. On platforms with no such identifier (the web build) a random
+value is generated and stored locally instead.
+
+Enrolling also generates a fresh TOTP secret, which is saved as a normal
+(encrypted) entry in your vault so the rolling 6-digit code appears in
+your authenticator list. Keychain assembles the Credential ID, the
+secret, and the device name you type into a single registration token
+(shown as text and a QR code). **You** copy that token into your own
+Atlas instance — Keychain itself makes no network connection to Atlas.
+From that point the Credential ID and secret are governed by your Atlas
+setup; how Atlas uses them is covered by Atlas's own policies.
 
 ---
 
