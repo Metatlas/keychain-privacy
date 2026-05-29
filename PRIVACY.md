@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 24, 2026
+**Last updated:** May 29, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -23,8 +23,11 @@ the relevant section calls it out explicitly.
   the data you enter into the app.
 - We **do not use** analytics, advertising, crash reporting, telemetry,
   or any tracking SDK.
-- **Camera access** is requested only when you tap "Scan QR" inside the
-  Vault tool. Camera images are processed on-device and never transmitted.
+- **Camera access** (Android) is requested only when you tap "Scan QR"
+  inside the Vault tool. On the **desktop** app, which has no camera,
+  "Scan QR" instead captures an image of your screen so you can drag a
+  box around an on-screen QR code. In both cases the image is processed
+  entirely on-device and never transmitted.
 - **Internet access** is required as a framework dependency. The app
   itself does not call any servers we operate, because no such servers
   exist. The few situations in which external network traffic can
@@ -54,7 +57,8 @@ We do not collect, store on any server, transmit, or share:
   locally, never sent to us, and no server we operate exists to receive it;
   see *Atlas device two-factor authentication* below.)
 - Diagnostic, crash, performance, or usage data.
-- Camera images, video frames, or the contents of QR codes you scan.
+- Camera images, video frames, desktop screen captures, or the contents
+  of QR codes you scan.
 
 The app has no analytics, no advertising network, no third-party
 tracking, and no remote configuration. Nothing about you ever reaches a
@@ -115,6 +119,18 @@ device, and is not used for any purpose other than the QR-code scan you
 explicitly initiated. You can deny or revoke this permission at any time
 in your device settings; the rest of the app continues to work normally
 without it.
+
+### Screen capture (desktop only)
+
+The Windows desktop app has no camera, so when you tap "Scan QR" inside
+the Vault tool it captures an image of your connected monitor(s) and
+shows it to you so you can drag a box around an on-screen QR code. The
+capture is decoded entirely on-device by a bundled QR-reader library
+(jsQR) and is held only in memory for the duration of the scan: it is
+never saved to disk, never transmitted off the device, and is discarded
+as soon as the scan finishes or you close the scanner. This applies only
+to the desktop build; the Android app uses the camera described above
+and never captures the screen.
 
 ### Internet (`android.permission.INTERNET`)
 
