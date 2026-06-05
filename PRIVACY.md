@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** May 31, 2026
+**Last updated:** June 5, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -84,10 +84,14 @@ isolated to the app and not accessible to other apps:
   (including an optional next-pay-day date you may enter), an optional
   current account balance you may enter to drive the Insights balance
   projection, saved checklists (regular and recurring types),
-  addresses, the services tied to those addresses, saved
-  password-generator settings, custom themes you create, your
-  reminder-time setting, your active theme, and other UI state** are
-  stored in the app's local storage. These
+  addresses, the services tied to those addresses, baby tracker data
+  (an optional baby profile with name, date of birth, optional time of
+  birth and notes; the feeding-tool settings; the recorded feedings
+  themselves with their timestamps, durations, optional volume, and
+  diaper checks; plus an in-progress feeding-timer state held while a
+  Record session is open), saved password-generator settings, custom
+  themes you create, your reminder-time setting, your active theme, and
+  other UI state** are stored in the app's local storage. These
   items are stored without additional encryption beyond the operating
   system's app sandbox.
 - **Files you export** (vault, addresses, checklist, etc.) are
@@ -241,7 +245,8 @@ Several tools and a Settings entry offer an optional transfer feature
 that lets you move data between two of your own devices directly over
 your local network — for example, between your phone and your desktop
 computer. Supported sources are the **Vault**, **Bills** (including
-**what-if bills**), **Addresses**, **Checklist**, and **Custom Themes**
+**what-if bills**), **Addresses**, **Checklist**, **Custom Themes**, and
+**Newborn Feeding** (baby profile, feeding settings, and feeding entries)
 tools, plus a **Settings → Transfer** composer that bundles a selection
 from any combination of those tools into a single transfer. This feature
 only runs when you explicitly start a transfer; it never runs in the
@@ -309,8 +314,8 @@ setup; how Atlas uses them is covered by Atlas's own policies.
 ## Data exports and external links
 
 If you use the app's export feature to save a backup of your vault,
-checklists, bills, or addresses, the resulting file is created on
-your device at the location you choose (typically your Downloads
+checklists, bills, addresses, or baby tracker data, the resulting file
+is created on your device at the location you choose (typically your Downloads
 folder or another location you select via the system file picker).
 Once exported, you are solely responsible for that file. We strongly
 recommend you only export to locations you control and only share the
