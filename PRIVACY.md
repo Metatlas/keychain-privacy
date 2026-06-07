@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** June 5, 2026
+**Last updated:** June 7, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -89,9 +89,11 @@ isolated to the app and not accessible to other apps:
   birth and notes; the feeding-tool settings; the recorded feedings
   themselves with their timestamps, durations, optional volume, and
   diaper checks; plus an in-progress feeding-timer state held while a
-  Record session is open), saved password-generator settings, custom
-  themes you create, your reminder-time setting, your active theme, and
-  other UI state** are stored in the app's local storage. These
+  Record session is open), saved trails from the Trail tool (the compass
+  headings, step counts, and any notes you record — no location data),
+  saved password-generator settings, custom themes you create, your
+  reminder-time setting, your active theme, and other UI state** are
+  stored in the app's local storage. These
   items are stored without additional encryption beyond the operating
   system's app sandbox.
 - **Files you export** (vault, addresses, checklist, etc.) are
@@ -172,6 +174,40 @@ No other network calls are made. The desktop (Tauri / Windows) build
 behaves the same way: no servers operated by us, the same five
 situations above, with Google Play services replaced by the Microsoft
 Store mechanisms where relevant.
+
+### Notifications (`android.permission.POST_NOTIFICATIONS`)
+
+Used to post local notifications on your device: scheduled **bill
+reminders**, and — only if you enable it — the **lock-screen feeding
+controls** described below. On Android 13 and later the system asks for
+this permission at runtime, the first time you turn on a feature that
+needs it. Every notification is composed and shown entirely on your
+device; nothing about them is collected or transmitted. You can deny or
+revoke the permission at any time in your device settings.
+
+### Foreground service (`android.permission.FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_SPECIAL_USE`)
+
+Declared solely to power the optional **lock-screen feeding controls**.
+When you turn this on (Settings → General → *Lock-screen & background
+controls*, off by default) and start recording a feeding, the app runs a
+foreground service that shows an ongoing notification with **Pause**,
+**Switch side**, and **End** buttons and a live timer, so you can control
+the feeding without unlocking your phone. The service runs **only while a
+feeding is actively being recorded** and is removed as soon as you end or
+discard the feed, or disable the feature. It performs no networking,
+collects nothing, and transmits nothing — all timing stays on your
+device. The feeding data itself is stored exactly as described above
+regardless of whether this feature is on.
+
+### Motion & orientation sensors (no permission required)
+
+The **Trail** tool reads your device's orientation/compass sensor (via
+the standard web DeviceOrientation API) to show your current heading
+while you record a path. No Android permission is required for this, and
+no location/GPS is used. The readings are used live on your device; only
+the headings you choose to save as trail legs are stored locally (see
+*What is stored on your device*). Nothing from these sensors is collected
+or transmitted.
 
 ---
 
