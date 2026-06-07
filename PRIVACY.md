@@ -209,6 +209,20 @@ the headings you choose to save as trail legs are stored locally (see
 *What is stored on your device*). Nothing from these sensors is collected
 or transmitted.
 
+### Physical activity (`android.permission.ACTIVITY_RECOGNITION`)
+
+Used **only** for the Trail tool's optional **automatic step counting**.
+When you turn it on (Trail settings, or Settings → General →
+*Lock-screen & background controls*, off by default) and record a trail,
+the app reads the device's hardware **step counter** so it can fill in
+distance without you typing step counts — including while the screen is
+off, via an ongoing notification posted by a foreground service. It runs
+**only while a trail is actively recording** and stops when you finish,
+discard, or disable the feature. Only the resulting step counts per leg
+are stored locally; the permission is requested at runtime, used entirely
+on-device, never collected or transmitted, and revocable any time in your
+device settings.
+
 ---
 
 ## Third-party services
