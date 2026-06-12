@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** June 7, 2026
+**Last updated:** June 12, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -59,6 +59,9 @@ We do not collect, store on any server, transmit, or share:
 - Diagnostic, crash, performance, or usage data.
 - Camera images, video frames, desktop screen captures, or the contents
   of QR codes you scan.
+- The contents of any PDF files you merge or split with the PDF tool —
+  they are read and processed entirely on your device and the result is
+  written only to the location you choose.
 
 The app has no analytics, no advertising network, no third-party
 tracking, and no remote configuration. Nothing about you ever reaches a
@@ -364,12 +367,17 @@ setup; how Atlas uses them is covered by Atlas's own policies.
 ## Data exports and external links
 
 If you use the app's export feature to save a backup of your vault,
-checklists, bills, addresses, or baby tracker data, the resulting file
-is created on your device at the location you choose (typically your Downloads
-folder or another location you select via the system file picker).
-Once exported, you are solely responsible for that file. We strongly
-recommend you only export to locations you control and only share the
-files with parties you trust.
+checklists, bills, addresses, or baby tracker data — or the **PDF
+tool** to merge or split PDFs — the resulting file is created on your
+device at the location you choose (typically your Downloads folder, the
+Import/Export folder you configured, or another location you select via
+the system file picker). The PDF tool reads the source PDFs you pick and
+performs the merge or split entirely on-device using bundled libraries
+that make no network calls; the input files are not retained by the app
+and the output is written only where you direct it. Once exported, you
+are solely responsible for that file. We strongly recommend you only
+export to locations you control and only share the files with parties
+you trust.
 
 The **Local backup** feature (Settings → Transfer) writes a single
 file containing everything on the device — all of the collections
