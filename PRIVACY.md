@@ -94,6 +94,8 @@ isolated to the app and not accessible to other apps:
   diaper checks; plus an in-progress feeding-timer state held while a
   Record session is open), saved trails from the Trail tool (the compass
   headings, step counts, and any notes you record — no location data),
+  the TCG card collection (the editions you add and the cards within
+  them — set codes, indexes, and any optional names and quantities),
   saved password-generator settings, custom themes you create, your
   reminder-time setting, your active theme, and other UI state** are
   stored in the app's local storage. These
@@ -298,9 +300,10 @@ Several tools and a Settings entry offer an optional transfer feature
 that lets you move data between two of your own devices directly over
 your local network — for example, between your phone and your desktop
 computer. Supported sources are the **Vault**, **Bills** (including
-**what-if bills**), **Addresses**, **Checklist**, **Custom Themes**, and
-**Newborn Feeding** (baby profile, feeding settings, and feeding entries)
-tools, plus a **Settings → Transfer** composer that bundles a selection
+**what-if bills**), **Addresses**, **Checklist**, **TCG** (card editions
+and the cards within them), **Custom Themes**, and **Newborn Feeding**
+(baby profile, feeding settings, and feeding entries) tools, plus a
+**Settings → Transfer** composer that bundles a selection
 from any combination of those tools into a single transfer. This feature
 only runs when you explicitly start a transfer; it never runs in the
 background.
