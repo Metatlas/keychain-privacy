@@ -299,7 +299,7 @@ donation.
 Several tools and a Settings entry offer an optional transfer feature
 that lets you move data between two of your own devices directly over
 your local network — for example, between your phone and your desktop
-computer. Supported sources are the **Vault**, **Bills** (including
+computer, or directly between two phones. Supported sources are the **Vault**, **Bills** (including
 **what-if bills**), **Addresses**, **Checklist**, **TCG** (card editions
 and the cards within them), **Custom Themes**, and **Newborn Feeding**
 (baby profile, feeding settings, and feeding entries) tools, plus a
