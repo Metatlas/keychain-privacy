@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** June 12, 2026
+**Last updated:** June 20, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application and as a desktop application for Windows.
@@ -45,9 +45,10 @@ the relevant section calls it out explicitly.
 We do not collect, store on any server, transmit, or share:
 
 - Your passwords, authenticator (TOTP) secrets, recovery / backup
-  codes, vault entries, bills, checklists, inventory items, addresses,
-  the services tied to those addresses, hashes, encrypted strings, or
-  any other content you enter into the app.
+  codes, vault entries, bills, the mortgage details you enter into the
+  Bill Manager's mortgage estimator, checklists, inventory items,
+  addresses, the services tied to those addresses, hashes, encrypted
+  strings, or any other content you enter into the app.
 - Your name, email address, phone number, postal address, payment
   information, or any other personally identifiable information.
 - Your device identifier, advertising identifier, IP address, precise or
@@ -86,7 +87,10 @@ isolated to the app and not accessible to other apps:
   envelopes used by the Insights projection), income figures
   (including an optional next-pay-day date you may enter), an optional
   current account balance you may enter to drive the Insights balance
-  projection, saved checklists (regular and recurring types),
+  projection, the mortgage details you enter into the Bill Manager's
+  mortgage estimator (loan terms, optional escrow / tax / insurance
+  figures, and the extra payments and refinances you log — used only for
+  on-device projections), saved checklists (regular and recurring types),
   addresses, the services tied to those addresses, baby tracker data
   (an optional baby profile with name, date of birth, optional time of
   birth and notes; the feeding-tool settings; the recorded feedings
@@ -304,7 +308,8 @@ computer, or directly between two phones. Supported sources are the **Vault**, *
 and the cards within them), **Custom Themes**, and **Newborn Feeding**
 (baby profile, feeding settings, and feeding entries) tools, plus a
 **Settings → Transfer** composer that bundles a selection
-from any combination of those tools into a single transfer. This feature
+from any combination of those tools — and the Bill Manager's mortgage
+estimate — into a single transfer. This feature
 only runs when you explicitly start a transfer; it never runs in the
 background.
 
