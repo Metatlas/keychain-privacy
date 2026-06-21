@@ -3,11 +3,11 @@
 **Last updated:** June 20, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
-as an Android application and as a desktop application for Windows.
-The app is offline-first software that runs entirely on your device.
-This policy explains what the app does — and, more importantly, what
-it does **not** do — with your data. The policy applies equally to
-both the Android and desktop versions; where their behavior differs,
+as an Android application, as a desktop application for Windows, and as
+a browser-based web version. The app is offline-first software that runs
+entirely on your device. This policy explains what the app does — and,
+more importantly, what it does **not** do — with your data. The policy
+applies equally to all three versions; where their behavior differs,
 the relevant section calls it out explicitly.
 
 ---
@@ -115,6 +115,39 @@ isolated to the app and not accessible to other apps:
 
 You can remove this data at any time by uninstalling the app or by
 clearing app storage from your device's Settings → Apps screen.
+
+---
+
+## The web version
+
+Keychain is also offered as a **browser-based web version** — for
+example, the playable embed on its itch.io page — so you can try it
+without installing anything. It is the same application, delivered as
+static files that run entirely in your browser. There is no account, no
+backend, and no server we operate.
+
+- **Your data stays in your browser.** Everything you enter is saved in
+  your browser's local storage on your own device, exactly as the apps
+  store theirs. Your vault and any encrypted inventories remain
+  encrypted with **AES-256-GCM** using a key derived from your
+  passphrase. Nothing you enter is uploaded.
+- **What the host can see.** Because the page itself is downloaded from
+  a host (the itch.io content-delivery network, or another static host),
+  that host receives the ordinary request information every website
+  does — your IP address, browser user-agent, and which files were
+  requested — for the sole purpose of serving the page. It never
+  receives the data you enter into the app, which never leaves your
+  browser. We do not add analytics, advertising, or tracking scripts.
+- **Some features need the apps.** The web version is intended as a way
+  to try Keychain. Capabilities that require the operating system —
+  encrypted device-to-device transfer and Sync, local backups to a
+  folder, and scheduled bill reminders — are available only in the
+  Android and Windows desktop apps. You can export your data from the
+  web version and import it into either app.
+- **Storage is per-browser.** Data saved in the web version lives in
+  that specific browser on that device, and clearing the browser's site
+  data removes it. Use the export feature to keep a copy or to move your
+  data into one of the apps.
 
 ---
 
