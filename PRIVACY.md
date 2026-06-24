@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** June 20, 2026
+**Last updated:** June 24, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application, as a desktop application for Windows, and as
@@ -93,10 +93,13 @@ isolated to the app and not accessible to other apps:
   on-device projections), saved checklists (regular and recurring types),
   addresses, the services tied to those addresses, baby tracker data
   (an optional baby profile with name, date of birth, optional time of
-  birth and notes; the feeding-tool settings; the recorded feedings
-  themselves with their timestamps, durations, optional volume, and
-  diaper checks; plus an in-progress feeding-timer state held while a
-  Record session is open), saved trails from the Trail tool (the compass
+  birth, notes, and your chosen measurement units for the baby tools;
+  the feeding-tool settings; the recorded feedings themselves with their
+  timestamps, durations, optional volume, and diaper checks; an
+  in-progress feeding-timer state held while a Record session is open;
+  and the growth-log entries you add — dated measurements such as weight,
+  height, and head circumference, plus any vaccinations, milestones, and
+  notes you record), saved trails from the Trail tool (the compass
   headings, step counts, and any notes you record — no location data),
   the TCG card collection (the editions you add and the cards within
   them — set codes, indexes, and any optional names and quantities),
@@ -338,8 +341,9 @@ that lets you move data between two of your own devices directly over
 your local network — for example, between your phone and your desktop
 computer, or directly between two phones. Supported sources are the **Vault**, **Bills** (including
 **what-if bills**), **Addresses**, **Checklist**, **TCG** (card editions
-and the cards within them), **Custom Themes**, and **Newborn Feeding**
-(baby profile, feeding settings, and feeding entries) tools, plus a
+and the cards within them), **Custom Themes**, **Newborn Feeding**
+(baby profile, feeding settings, and feeding entries), and **Growth**
+(the baby's growth-log entries) tools, plus a
 **Settings → Transfer** composer that bundles a selection
 from any combination of those tools — and the Bill Manager's mortgage
 estimate — into a single transfer. This feature
