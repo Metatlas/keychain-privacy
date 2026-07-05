@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** June 24, 2026
+**Last updated:** July 4, 2026
 
 This privacy policy applies to **Keychain** ("the app"), available
 as an Android application, as a desktop application for Windows, and as
@@ -76,9 +76,10 @@ The app stores data locally on your device, in storage areas that are
 isolated to the app and not accessible to other apps:
 
 - **Vault entries** (service name, optional username / email, password,
-  optional TOTP authenticator secret, optional recovery / backup codes)
-  are encrypted with **AES-256-GCM** using a key derived from your
-  master passphrase via **PBKDF2-SHA-256 with 250,000 iterations**.
+  optional TOTP authenticator secret, optional recovery / backup codes,
+  and an optional reference linking the entry to one of your Bill Manager
+  entries) are encrypted with **AES-256-GCM** using a key derived from
+  your master passphrase via **PBKDF2-SHA-256 with 250,000 iterations**.
   Your master passphrase is never stored.
 - **Encrypted inventory checklists** are protected with the same
   algorithms, using a separate passphrase you choose.
