@@ -100,7 +100,11 @@ isolated to the app and not accessible to other apps:
   in-progress feeding-timer state held while a Record session is open;
   and the growth-log entries you add — dated measurements such as weight,
   height, and head circumference, plus any vaccinations, milestones, and
-  notes you record), saved trails from the Trail tool (the compass
+  notes you record), the pets you add and their health logs (each pet's
+  name, species, optional date of birth, chosen weight unit, and notes;
+  plus the dated health entries you record for each — weights,
+  vaccinations, check-ups, medications, and notes), saved trails from the
+  Trail tool (the compass
   headings, step counts, and any notes you record — no location data),
   the TCG card collection (the editions you add and the cards within
   them — set codes, indexes, and any optional names and quantities),
